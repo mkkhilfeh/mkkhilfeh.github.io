@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+    <head>
+        <title>list of classes</title>
+        <style>body {
+            font-family: 'Signika Negative', sans-serif;
+            max-width: 65rem;
+        
+            padding: 5px;
+            margin: auto;
+            background: #a7d0ef;
+            
+            color: #000000;
+            
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            </style>
+            <div class="info-panels">
+                <h3><a href="/list/">List of classes</a></h3>
+            </div>
+            <body>
+
+                <ul>
+                    {% for h in assi %}
+                    <li><a href="/list/class/{{h[0]}}/">{{h[0]}}</a></li>
+                    {% else %} 
+            <p>(No classes available)</p>
+                    {% endfor %}
+                </ul>
+
+
+
+
+            </body>

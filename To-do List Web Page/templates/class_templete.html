@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Homework Check list</title>
+        <style>
+            .incomplete-assignment-list {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              background-color: #2195f329;
+              padding: 5px;
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              grid-auto-flow: column;
+              text-align: center;
+              justify-items: center;
+              align-content: space-evenly;
+              align-items: center;
+        
+            }
+            .head-list {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              background-color: #2195f372;
+              padding: 5px;
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              grid-auto-flow: column;
+              text-align: center;
+              justify-items: center;
+              align-content: space-evenly;
+              align-items: center;
+        
+            }
+            body {
+                font-family: 'Signika Negative', sans-serif;
+                max-width: 65rem;
+            
+                padding: 5px;
+                margin: auto;
+                background: #a7d0ef;
+                
+                color: #000000;
+                
+                }
+                .btn-new{
+                background: rgb(17, 193, 216);
+                max-width: 16rem;
+                padding: 0.5em;
+                text-align: center;
+                margin: auto;
+                border-radius: 7px;
+                border: 10px;
+                display:inline;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+        
+            </style>
+    </head>
+<body>
+    <div class="info-panels">
+        <h3><a href="/list/">Homework from {{classs}}</a></h3>
+    </div>
+    <div class="head-list">
+        <h3 class="assinment-title">Assignment</h3>
+        <p class="assigned-date">Assigned-date</p>
+        <p class="due-date">Due date</p>
+        <p class="complete_time">Complete Time</p>
+    </div>
+    {% for h in assi %}
+    <div class="incomplete-assignment-list">
+        <h3 class="assinment-title"><a href="/list/{{h[4]}}/">{{h[0]}}</a></h3>
+        <p class="assigned-date">{{h[2]}}</p>
+        <p class="due-date">{{h[3]}}</p>
+        <p class="complete_time">{{h[5]}}</p>
+    </div>
+    {% else %}
+            <p>(No assignments in this class available)</p>
+    {% endfor %}
+    <div class="Still To-Do">
+        <h1> </h1>
+        <h2 class="btn-new"><a href="/list/">Still To-Do assignments</a></h2>
+    </div>
+    
+</body>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Homework Check list</title>
+        <style>
+            .incomplete-assignment-list {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              background-color: #2195f329;
+              padding: 5px;
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              grid-auto-flow: column;
+              text-align: center;
+              justify-items: center;
+              align-content: space-evenly;
+              align-items: center;
+              text-decoration: none;
+        
+            }
+            body {
+                font-family: 'Signika Negative', sans-serif;
+                max-width: 65rem;
+            
+                padding: 5px;
+                margin: auto;
+                background: #a7d0ef;
+                
+                color: #000000;
+                text-decoration: none;
+                
+                }
+        
+            .btn-complete{
+                background: rgb(17, 193, 216);
+                max-width: 50rem;
+                text-align: center;
+                padding: 5px;
+                margin: auto;
+                border-radius: 7px;
+                border: 10px;
+                text-decoration: none;
+                
+                
+            }
+            .head-list {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              background-color: #2195f372;
+              padding: 5px;
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              grid-auto-flow: column;
+              text-align: center;
+              justify-items: center;
+              align-content: space-evenly;
+              align-items: center;
+              text-decoration: none;
+            }
+            .btn-cancel{
+                background: rgb(216, 97, 17);
+                max-width: 50rem;
+                text-align: center;
+                padding: 0.5em;
+                margin: auto;
+                border-radius: 7px;
+                border: 10px;
+                
+            }
+            .btn-new{
+                background: rgb(17, 193, 216);
+                max-width: 16rem;
+                padding: 0.5em;
+                text-align: center;
+                margin: auto;
+                border-radius: 7px;
+                border: 10px;
+                display:inline;
+            }
+            a {
+                color: black;
+                text-decoration: none;
+            }
+            
+            </style>
+    </head>
+<body>
+    <div class="info-panels">
+        <h3><a href="/list/">Homework To-Do</a></h3>
+    </div>
+    <div class="head-list">
+        <h3 class="assinment-title">Assignment</h3>
+        <p class="class"><a href="/list/class/">Class</a></p>
+        <p class="assigned-date">Assigned-date</p>
+        <p class="due-date">Due date</p>
+        <p>Complete</p>
+        <p>Cancel</p>
+    </div>
+    {% for h in assi %}
+    <div class="incomplete-assignment-list">
+        <h3 class="assinment-title"><a href="/list/{{h[4]}}/">{{h[0]}}</a></h3>
+        <p class="class"><a href="/list/class/{{h[1]}}/">{{h[1]}}</a></p>
+        <p class="assigned-date">{{h[2]}}</p>
+        <p class="due-date">{{h[3]}}</p>
+        <p class="btn-complete"><a href="/complete/{{h[4]}}/">Complete</a></p>
+        <p class="btn-cancel"><a href="/cancel/{{h[4]}}/">Cancel</a></p>
+    </div>
+    {% else %}
+            <p>(No incomplete assignments available)</p>
+    {% endfor %}
+    <div class="new_ass">
+        <h1> </h1>
+        <h2 class="btn-new"><a href="/new/">Add New Assignment</a></h2> <h2 class="btn-new"><a href="/list/canceled-complete/">Complete and Canceled Assignments</a></h2>
+        <h1> </h1>
+    </div>
+</body>

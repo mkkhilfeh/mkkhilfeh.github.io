@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Assignment</title>
+        <style>
+            .incomplete-assignment-list {
+              display: grid;
+              grid-template-columns: auto auto auto;
+              background-color: #2195f329;
+              padding: 5px;
+              border: 1px solid rgba(0, 0, 0, 0.8);
+              grid-auto-flow: column;
+              text-align: center;
+              justify-items: center;
+              align-content: space-evenly;
+              align-items: center;
+        
+            }
+            body {
+                font-family: 'Signika Negative', sans-serif;
+                max-width: 50rem;
+            
+                padding: 5px;
+                margin: auto;
+                background: #a7d0ef;
+                
+                color: #000000;
+                
+                }
+        
+            .btn-complete{
+                background: rgb(17, 193, 216);
+                max-width: 50rem;
+                text-align: center;
+                padding: 5px;
+                margin: auto;
+                border-radius: 7px;
+                border: 10px;
+                text-decoration: none;
+                
+                
+            }
+            .btn-cancel{
+                background: rgb(216, 97, 17);
+                max-width: 50rem;
+                text-align: center;
+                padding: 0.5em;
+                margin: auto;
+                border-radius: 7px;
+                border: 10px;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1><a style= color:#000000 href="/list/">Create Assignment</a></h1>
+    <div>
+    <form action="/new/submit" method="POST">
+        <p>
+        <label for="assignment_name">Assignment name:</label>
+        <input type="text" id="assignment_name" name="assignment_name">
+        </p>
+        <p>
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class">
+        </p>  
+        <p>
+            <label for="due_date">Due Date:</label>
+  <input type="datetime-local" id="due_date" name="due_date" pattern="[0-9]{2}:[0-9]{2}T[0-9]{4}-[0-9]{2}-[0-9]{2}">
+        </p>
+        <input type="submit" value="Create">
+    </form>
+    </div>
+    </body>
+</html>
